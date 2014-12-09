@@ -5,7 +5,10 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+		"barryvdh/laravel-debugbar": "~1.8",
+        "barryvdh/laravel-ide-helper": "1.11.3",
+        "phpunit/phpunit": "4.5.*@dev"
 	},
 	"autoload": {
 		"classmap": [
