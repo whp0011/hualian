@@ -15,3 +15,7 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+require_once('demo_route.php');
+require_once('index_route.php');
+require_once('admin_route.php');
