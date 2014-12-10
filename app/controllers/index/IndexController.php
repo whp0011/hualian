@@ -5,12 +5,13 @@
  * IndexController.php文件
  *
  * User: Administrator
- * DateTime: 2014/12/10 14:38
+ * DateTime: 2014/12/10 14:58
  */
 
 class IndexController extends BaseController{
+
 	public function index(){
-		App::abort('404');
+		return 'index index';
 	}
 
 } 

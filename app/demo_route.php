@@ -7,4 +7,4 @@
  * User: Administrator
  * DateTime: 2014/12/10 14:39
  */
-Route::get('demo/error','IndexController@index');
+Route::get('demo/index','DemoIndexController@index');
