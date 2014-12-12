@@ -8,3 +8,12 @@
  * DateTime: 2014/12/10 14:39
  */
 Route::get('demo/index','DemoIndexController@index');
+
+Route::get('demo/csrf',function(){
+	return View::make('demo.csrf');
+});
+
+Route::post( 'demo/csrfCheck',array('before' => 'csrf','uses' => 'DemoIndexController@csrfCheck') );
+//Route::post('demo/csrfCheck',array('before' => 'csrf',function(){
+//	return Input::all();
+//}));
