@@ -36,8 +36,13 @@ ClassLoader::addDirectories(array(
 */
 
 //Log::useFiles(storage_path().'/logs/laravel.log');
-Log::useDailyFiles(storage_path().'/logs/laravel.log');
+Log::useDailyFiles(storage_path().'/logs/laravel.log',7,'debug');
 //Log::useErrorLog(storage_path().'logs/laravel_error.log');
+
+//Log::listen(function( $level, $message, $context)
+//{
+//	Log::error('listen');
+//});
 
 /*
 |--------------------------------------------------------------------------

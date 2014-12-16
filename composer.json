@@ -13,7 +13,8 @@
         "barryvdh/laravel-ide-helper": "1.11.3",
         "phpunit/phpunit": "4.5.*@dev",
         "doctrine/dbal": "~2.3",
-        "fabpot/goutte": "~2.0"
+        "fabpot/goutte": "~2.0",
+        "zetacomponents/mail": "dev-master"
     },
     "autoload": {
         "classmap": [

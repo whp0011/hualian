@@ -17,3 +17,8 @@ Route::post( 'demo/csrfCheck',array('before' => 'csrf','uses' => 'DemoIndexContr
 //Route::post('demo/csrfCheck',array('before' => 'csrf',function(){
 //	return Input::all();
 //}));
+
+Route::get('demo/math/div','DemoMathController@div');
+
+Route::get('demo/log/writelog','DemoLogController@writeLog');
+Route::get('demo/log/sendmail','DemoLogController@sendMail');

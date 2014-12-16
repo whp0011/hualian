@@ -19,4 +19,5 @@ class DemoIndexController extends BaseController{
 		return $data;
 //		return Input::all();
 	}
+
 }
