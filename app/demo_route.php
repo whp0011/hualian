@@ -22,3 +22,7 @@ Route::get('demo/math/div','DemoMathController@div');
 
 Route::get('demo/log/writelog','DemoLogController@writeLog');
 Route::get('demo/log/sendmail','DemoLogController@sendMail');
+
+//银行列表
+Route::get('demo/bank','DemoBankListController@index');
+Route::get('demo/bank/info','DemoBankListController@bankInfo');
