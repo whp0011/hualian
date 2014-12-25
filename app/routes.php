@@ -15,6 +15,9 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+Route::get('/phpinfo',function(){
+	phpinfo();
+});
 
 require_once('demo_route.php');
 require_once('index_route.php');
