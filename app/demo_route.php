@@ -26,3 +26,6 @@ Route::get('demo/log/sendmail','DemoLogController@sendMail');
 //银行列表
 Route::get('demo/bank','DemoBankListController@index');
 Route::get('demo/bank/info','DemoBankListController@bankInfo');
+
+//laravel中的Request类
+Route::get('demo/request/root','DemoRequestController@root');
