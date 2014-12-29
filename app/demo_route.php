@@ -29,3 +29,12 @@ Route::get('demo/bank/info','DemoBankListController@bankInfo');
 
 //laravel中的Request类
 Route::get('demo/request/root','DemoRequestController@root');
+
+//laravel中的Redirect类
+Route::get('demo/redirect/index','DemoRedirectController@index');
+
+//GuzzleHttp
+Route::get('demo/guzzle/index','DemoGuzzleController@index');
+
+//DB
+Route::get('demo/db/index','DemoDBController@index');

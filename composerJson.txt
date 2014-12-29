@@ -1,0 +1,8 @@
+ "laravel/framework": "4.2.*",  //laravel框架
+        "barryvdh/laravel-debugbar": "~1.8", //laravel debug插件
+        "barryvdh/laravel-ide-helper": "1.11.3",  //laravel ide帮助插件
+        "phpunit/phpunit": "4.5.*@dev",  //phpunit单元测试插件
+        "doctrine/dbal": "~2.3",  //model文档生成插件
+        "fabpot/goutte": "~2.0", //http请求 简单的web抓取插件
+        "zetacomponents/mail": "dev-master", //邮件插件
+        "knplabs/gaufrette": "0.2.*@dev"  //系统文件抽象接口 ，用来处理文件
