@@ -38,3 +38,12 @@ Route::get('demo/guzzle/index','DemoGuzzleController@index');
 
 //DB
 Route::get('demo/db/index','DemoDBController@index');
+
+//PHP内置函数
+Route::get('demo/php/abort_start','DemoPHPFunController@start');
+Route::get('demo/php/abort_stop','DemoPHPFunController@stop');
+Route::get('demo/php/server','DemoPHPFunController@server');
+Route::get('demo/php/slashes','DemoPHPFunController@slashes');
+
+//PHPMAILER
+Route::get('demo/mail/163','DemoMailController@mail163');

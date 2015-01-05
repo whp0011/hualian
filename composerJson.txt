@@ -6,3 +6,4 @@
         "fabpot/goutte": "~2.0", //http请求 简单的web抓取插件
         "zetacomponents/mail": "dev-master", //邮件插件
         "knplabs/gaufrette": "0.2.*@dev"  //系统文件抽象接口 ，用来处理文件
+        "phpmailer/phpmailer": "dev-master"  php简单邮件发送插件

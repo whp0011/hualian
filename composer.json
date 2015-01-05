@@ -15,7 +15,8 @@
         "doctrine/dbal": "~2.3",
         "fabpot/goutte": "~2.0",
         "zetacomponents/mail": "dev-master",
-        "knplabs/gaufrette": "0.2.*@dev"
+        "knplabs/gaufrette": "0.2.*@dev",
+        "phpmailer/phpmailer": "dev-master"
     },
     "autoload": {
         "classmap": [
