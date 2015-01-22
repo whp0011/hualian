@@ -47,3 +47,18 @@ Route::get('demo/php/slashes','DemoPHPFunController@slashes');
 
 //PHPMAILER
 Route::get('demo/mail/163','DemoMailController@mail163');
+
+//File upload
+Route::get('demo/view/fileupload',function(){
+    return View::make('demo.file-upload');
+});
+Route::post('demo/file/upload','DemoFileController@upload');
+
+//base64
+Route::get('demo/base64/encode','DemoBase64Controller@doBase64');
+Route::get('demo/base64/encode2','DemoBase64Controller@doBase64_2');
+Route::get('demo/base64/decode','DemoBase64Controller@unBase64');
+Route::get('demo/base64/decode2','DemoBase64Controller@unBase64_2');
+
+//md5
+Route::get('demo/md5/index','DemoMd5Controller@index');

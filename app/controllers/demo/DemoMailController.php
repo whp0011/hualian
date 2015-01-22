@@ -11,7 +11,7 @@
 class DemoMailController extends BaseController{
     public function mail163(){
         $mail= new PHPMailer();
-        $body= "水电费水电费";
+        $body= "N=594873950&ADSESSION=1321316731&ADTAG=CLIENT.QQ.3493_";
 //采用SMTP发送邮件
         $mail->IsSMTP();
 //邮件服务器
@@ -33,7 +33,7 @@ class DemoMailController extends BaseController{
 //采用html格式发送邮件
         $mail->MsgHTML($body);
 //接受者邮件名称
-        $mail->AddAddress("***@163.com", "test");//发送邮件
+        $mail->AddAddress("**@163.com", "test");//发送邮件
         $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 465;
         if(!$mail->Send()) {

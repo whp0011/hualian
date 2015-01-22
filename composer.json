@@ -16,7 +16,8 @@
         "fabpot/goutte": "~2.0",
         "zetacomponents/mail": "dev-master",
         "knplabs/gaufrette": "0.2.*@dev",
-        "phpmailer/phpmailer": "dev-master"
+        "phpmailer/phpmailer": "dev-master",
+        "codeguy/upload": " *"
     },
     "autoload": {
         "classmap": [
@@ -44,5 +45,9 @@
     "config": {
         "preferred-install": "dist"
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "repositories": [
+        {"type": "composer", "url": "http://pkg.phpcomposer.com/repo/packagist/"},
+        {"packagist": false}
+    ]
 }

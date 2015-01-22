@@ -73,3 +73,5 @@ if (is_dir($workbench = __DIR__.'/../workbench'))
 {
 	Illuminate\Workbench\Starter::start($workbench);
 }
+
+require __DIR__.'/../app/config/constants.php'; //系统常量配置
