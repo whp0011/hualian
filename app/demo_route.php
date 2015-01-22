@@ -60,5 +60,8 @@ Route::get('demo/base64/encode2','DemoBase64Controller@doBase64_2');
 Route::get('demo/base64/decode','DemoBase64Controller@unBase64');
 Route::get('demo/base64/decode2','DemoBase64Controller@unBase64_2');
 
-//md5
+//md5  hash_hmac
 Route::get('demo/md5/index','DemoMd5Controller@index');
+
+//editor富文本编辑器
+Route::get('demo/editor/show','DemoEditorController@show');
