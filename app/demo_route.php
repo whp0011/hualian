@@ -65,3 +65,7 @@ Route::get('demo/md5/index','DemoMd5Controller@index');
 
 //editor富文本编辑器
 Route::get('demo/editor/show','DemoEditorController@show');
+
+//ASCII码
+Route::get('demo/ascii/index','DemoASCIIController@index');
+Route::get('demo/ascii/ascii','DemoASCIIController@ascii');

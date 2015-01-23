@@ -199,7 +199,7 @@ class DemoBase64Controller extends BaseController
         $strEncodeBase64 = '';
         foreach ($arrBase64 as $base64Val) {
             $charKey = array_shift($arrKey);
-            $intPosition = bcmod($code[$charKey], $intSplitNum);
+            $intPosition = bcmod(chr($charKey), $intSplitNum);
             if (strlen($base64Val) < $intSplitNum) {
                 $intPosition = 0; //若最后的切分片段小于切分长度，加密key插入到最前面
             }
