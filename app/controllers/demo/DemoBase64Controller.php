@@ -94,76 +94,12 @@ class DemoBase64Controller extends BaseController
 
     public function doBase64_2()
     {
-        $code = [
-            'A' => 100,
-            'B' => 101,
-            'C' => 102,
-            'D' => 103,
-            'E' => 104,
-            'F' => 105,
-            'G' => 106,
-            'H' => 107,
-            'I' => 108,
-            'J' => 109,
-            'K' => 110,
-            'L' => 111,
-            'M' => 112,
-            'N' => 113,
-            'O' => 114,
-            'P' => 115,
-            'Q' => 116,
-            'R' => 117,
-            'S' => 118,
-            'T' => 119,
-            'U' => 120,
-            'V' => 121,
-            'W' => 122,
-            'X' => 123,
-            'Y' => 124,
-            'Z' => 125,
-            'a' => 126,
-            'b' => 127,
-            'c' => 128,
-            'd' => 129,
-            'e' => 130,
-            'f' => 131,
-            'g' => 132,
-            'h' => 133,
-            'i' => 134,
-            'j' => 135,
-            'k' => 136,
-            'l' => 137,
-            'm' => 138,
-            'n' => 139,
-            'o' => 140,
-            'p' => 141,
-            'q' => 142,
-            'r' => 143,
-            's' => 144,
-            't' => 145,
-            'u' => 146,
-            'v' => 147,
-            'w' => 148,
-            'x' => 149,
-            'y' => 150,
-            'z' => 151,
-            '0' => 152,
-            '1' => 153,
-            '2' => 154,
-            '3' => 155,
-            '4' => 156,
-            '5' => 157,
-            '6' => 158,
-            '7' => 159,
-            '8' => 160,
-            '9' => 161,
-        ];
-
-        $str = 'HT@61655|SP=3/1/0&61656|SP=3/1/0&61657|SP=3/1/0&61658|SP=3/1/0&61659|SP=3/1/0&61660|SP=3/1/0&61661|SP=3/1/0@2*1,3*1,4*1,5*1@1';
-//        $str = 'YC@JQ|61608=0;1,61608=1;1,61608=2;1,61608=3;1,61608=4;1,61608=5;1,61608=6;1,61608=7;1@1*1@1';
-//        $str = 'YC@JQ|61608=0@1*1@1';
-        $password = hash_hmac('md5','000000','');;
+//        $str = 'HT@61655|SP=3/1/0&61656|SP=3/1/0&61657|SP=3/1/0&61658|SP=3/1/0&61659|SP=3/1/0&61660|SP=3/1/0&61661|SP=3/1/0@2*1,3*1,4*1,5*1@1';
+        $str = 'YC@JQ|61608=0;1,61608=1;1,61608=2;1,61608=3;1,61608=4;1,61608=5;1,61608=6;1,61608=7;1@1*1@1';
+//        $str = 'YC@JQ|61608=0@1*1@10';
+        $password = '000000';
         $originStr = 'un=kkkk&&pp=1&&pc=' . $str . '&&mu=1&&pt=1&&ub=1&&pw=' . $password;
+        $originStr = 'un=kkkk&&pp=1&&pc=HT@61655|SP=3/1/0&61656|SP=3/1/0&61657|SP=3/1/0&61658|SP=3/1/0&61659|SP=3/1/0&61660|SP=3/1/0&61661|SP=3/1/0@2*1,3*1,4*1,5*1@1&&mu=1&&pt=1&&ub=1&&pw=000000';
         $key = $this->key;
         //取最后一位作为切分值
         $intKeyLen = strlen($key);
@@ -181,8 +117,21 @@ class DemoBase64Controller extends BaseController
 
         //base64加密投注内容
         $strBase64 = base64_encode($originStr);
+        echo '源数据base64后数据：';
+        var_dump($strBase64);
         $strMd5 = md5($strBase64);
+        for ($i = 0; $i < 2; $i++) {
+            $intLen = strlen($strBase64);
+            if ('=' == substr($strBase64, $intLen - 1, $intLen)) {
+                $strBase64 = substr($strBase64, 0, $intLen - 1);
+            } else {
+                break;
+            }
+        }
+        echo '源数据base64后数据md5加密后数据：';
         var_dump($strMd5);
+        echo '源数据base64后数据去除末尾=号：';
+        var_dump($strBase64);
         $arrBase64 = str_split($strBase64, $intSplitNum);
         //加密key循环使用
         $intArrBase64 = count($arrBase64);
@@ -199,7 +148,8 @@ class DemoBase64Controller extends BaseController
         $strEncodeBase64 = '';
         foreach ($arrBase64 as $base64Val) {
             $charKey = array_shift($arrKey);
-            $intPosition = bcmod(chr($charKey), $intSplitNum);
+            echo ord($charKey),'<br>';
+            $intPosition = bcmod(ord($charKey), $intSplitNum);
             if (strlen($base64Val) < $intSplitNum) {
                 $intPosition = 0; //若最后的切分片段小于切分长度，加密key插入到最前面
             }
@@ -216,7 +166,7 @@ class DemoBase64Controller extends BaseController
 
         var_dump($strEncodeBase64);
 //        var_dump($arrKey);
-        var_dump($key);
+//        var_dump($key);
 //        var_dump($intArrBase64);
 //        var_dump($arrBase64);
 //        var_dump($intBase64);
@@ -230,7 +180,7 @@ class DemoBase64Controller extends BaseController
     {
         $code = $this->code;
         $key = $this->key;
-        $strBase64 = 'dXNlMcm5hbWUT9a2trYayZwc1m9qZWN0wX3OByaXplPDTEmcHJv0amVjdF9jwb21wQb3VuZDD1ZQ0BKUX2w2MTEYwOD0wQDqEqMUAxMJmU11bHRpcGxlAPTEmcGxxheJV90eXBlPTE3mmcWloYW89M1TQwMTE15JnVz6ZXJfYmFsMbG90PTETmcGFzYc3dvc1mQ9NjcwwYjOE0NzI4YDWQ5OTAy0YWVjYmEzwMmUyQMmZhNDGY2Ym2Q=';
+        $strBase64 = 'dW4c9a2trhayYmcHhA9MSYmbcGM9SFzRANj0E2NTV8xU1A9MyN8xLzAmNjDE2NTZ8U1AA9xMy8xLz6AmNjE2NTdc8U1A9hMy8xLzhAmNjE2bNTh8U1zA9My08xLzAmxNjE2NTNl8U1A9MyD8xLzAmNjEA2xNjB8U16A9My8xLzAcmNjE2hNjF8U1hA9My8xbLzBAMizoxLD0MqMSw0xKjEsNSNoxQDEmJmD11PTEmJnBA0xPTEmJn6ViPTEmJnBc3PTAwhMDAwhMA';
         //取最后一位作为切分值
         $intKeyLen = strlen($key);
         $intSplitNum = substr($key, $intKeyLen - 1);
@@ -261,13 +211,19 @@ class DemoBase64Controller extends BaseController
         $strDecodeBase64 = '';
         foreach ($arrBase64 as $base64Val) {
             $charKey = array_shift($arrKey);
-            $intPosition = bcmod($code[$charKey], $intSplitNum - 1);
+            $intPosition = bcmod(ord($charKey), $intSplitNum - 1);
             if (strlen($base64Val) < $intSplitNum) {
                 $intPosition = 0; //若最后的切分片段小于切分长度，加密key插入到最前面
             }
             $strPreBase64Val = substr($base64Val, 0, $intPosition);
             $strTailBase64Val = substr($base64Val, $intPosition+1);
             $strDecodeBase64 .= $strPreBase64Val . $strTailBase64Val;
+        }
+
+        if (bcmod(strlen($strDecodeBase64), 4) == 3) {
+            $strDecodeBase64 .= '=';
+        } elseif (bcmod(strlen($strDecodeBase64), 4) == 2) {
+            $strDecodeBase64 .= '==';
         }
         var_dump($strDecodeBase64);
     }

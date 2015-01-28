@@ -15,10 +15,10 @@ class DemoMd5Controller extends BaseController{
 //        echo hash_hmac('md5','000000','97d2dcb2ea177246d44f1114e2d5e9c5');
         echo '<br>';
 
-        echo self::HmacMd5('000000','WzGX+C6Yl0KEPi/8JsgnA=N5w9n73S6R');
+        echo self::HmacMd5('000000','321');
 
         echo '<br>';
-        echo hash_hmac('md5','000000','WzGX+C6Yl0KEPi/8JsgnA=N5w9n73S6R');
+        echo hash_hmac('md5','000000','321');
     }
     public function HmacMd5($data,$key)
     {

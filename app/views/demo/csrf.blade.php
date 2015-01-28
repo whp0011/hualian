@@ -3,6 +3,9 @@
 <head>
     <meta charset='utf-8'/>
     <title>CSRF安全验证</title>
+    <script>
+        window.location.href = window.location.href;
+    </script>
 </head>
 <body>
 <form action="/demo/csrfCheck" method="post">

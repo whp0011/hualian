@@ -18,6 +18,8 @@ Route::get('/', function()
 Route::get('/phpinfo',function(){
 	phpinfo();
 });
+Route::get('install/index','InstallIndexController@index');
+Route::get('install/init','InstallIndexController@init');
 
 require_once('demo_route.php');
 require_once('index_route.php');

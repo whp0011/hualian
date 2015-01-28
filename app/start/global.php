@@ -21,6 +21,7 @@ ClassLoader::addDirectories(array(
 	app_path().'/controllers/index',
 	app_path().'/controllers/admin',
 	app_path().'/controllers/demo',
+	app_path().'/controllers/install',
 
 ));
 
