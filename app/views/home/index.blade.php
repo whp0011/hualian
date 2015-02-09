@@ -6,5 +6,6 @@
 </head>
 <body>
   it is time to fighting！！！{{$mes}}
+  <p>{{Lang::get('messages.welcome',['name' => 'jack'])}}</p>
 </body>
 </html>

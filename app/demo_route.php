@@ -69,3 +69,15 @@ Route::get('demo/editor/show','DemoEditorController@show');
 //ASCII码
 Route::get('demo/ascii/index','DemoASCIIController@index');
 Route::get('demo/ascii/ascii','DemoASCIIController@ascii');
+
+//redis
+Route::get('demo/redis','DemoRedisController@index');
+
+//ballot计算混投注数
+Route::get('demo/ballot','DemoBallotController@index');
+Route::get('demo/ballot/new','DemoBallotController@newIndex');
+
+//layout布局
+Route::get('demo/layout',function(){
+    return View::make('demo.index');
+});

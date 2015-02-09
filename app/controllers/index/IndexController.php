@@ -11,7 +11,7 @@
 class IndexController extends BaseController{
 
 	public function index(){
-		return 'index index';
+		return View::make('home.index')->with(['mes' => 'msg']);
 	}
 
 } 
