@@ -99,7 +99,9 @@ class DemoBase64Controller extends BaseController
 //        $str = 'YC@JQ|61608=0@1*1@10';
         $password = '000000';
         $originStr = 'un=kkkk&&pp=1&&pc=' . $str . '&&mu=1&&pt=1&&ub=1&&pw=' . $password;
-        $originStr = 'un=kkkk&&pp=1&&pc=HT@61655|SP=3/1/0&61656|SP=3/1/0&61657|SP=3/1/0&61658|SP=3/1/0&61659|SP=3/1/0&61660|SP=3/1/0&61661|SP=3/1/0@2*1,3*1,4*1,5*1@1&&mu=1&&pt=1&&ub=1&&pw=000000';
+        $originStr = 'un=wangcaster&&pp=4.00&&pc=HT@63692>150212002|SP=1&63693>150212003|SP=1@1*1@1&&mu=1&&pt=6&&ub=2&&pw=199047
+';
+        //        $originStr = 'un=kkkk&&pp=1&&pc=HT@61655|SP=3/1/0&61656|SP=3/1/0&61657|SP=3/1/0&61658|SP=3/1/0&61659|SP=3/1/0&61660|SP=3/1/0&61661|SP=3/1/0@2*1,3*1,4*1,5*1@1&&mu=1&&pt=1&&ub=1&&pw=000000';
         $key = $this->key;
         //取最后一位作为切分值
         $intKeyLen = strlen($key);
@@ -180,7 +182,7 @@ class DemoBase64Controller extends BaseController
     {
         $code = $this->code;
         $key = $this->key;
-        $strBase64 = 'dW4c9a2trhayYmcHhA9MSYmbcGM9SFzRANj0E2NTV8xU1A9MyN8xLzAmNjDE2NTZ8U1AA9xMy8xLz6AmNjE2NTdc8U1A9hMy8xLzhAmNjE2bNTh8U1zA9My08xLzAmxNjE2NTNl8U1A9MyD8xLzAmNjEA2xNjB8U16A9My8xLzAcmNjE2hNjF8U1hA9My8xbLzBAMizoxLD0MqMSw0xKjEsNSNoxQDEmJmD11PTEmJnBA0xPTEmJn6ViPTEmJnBc3PTAwhMDAwhMA';
+        $strBase64 = 'dW4c9d2FuhZ2Nhc3hRlciYmbcHA9OCz4wMC0YmcGM9xSFRANjNM2OTE+MTDUwMjEyMDAAxxfFNQPT6MvMSY2MzYc5Mz4xhNTAyMThIwMDN8bU1A9Myz8wQD0EqMUAxxJiZtdTN0xJiZwdDD02JiZ1Yj0A0xJiZwdz60xOTkwcNDc';
         //取最后一位作为切分值
         $intKeyLen = strlen($key);
         $intSplitNum = substr($key, $intKeyLen - 1);

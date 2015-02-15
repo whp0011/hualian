@@ -81,3 +81,6 @@ Route::get('demo/ballot/new','DemoBallotController@newIndex');
 Route::get('demo/layout',function(){
     return View::make('demo.index');
 });
+
+//reg正则表达式
+Route::get('demo/reg','DemoRegController@index');
