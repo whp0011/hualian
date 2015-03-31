@@ -84,3 +84,6 @@ Route::get('demo/layout',function(){
 
 //reg正则表达式
 Route::get('demo/reg','DemoRegController@index');
+
+//php绘图
+Route::get('demo/draw','DemoDrawController@index');

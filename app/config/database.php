@@ -26,7 +26,8 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+//	'default' => 'mysql',
+	'default' => 'sqlite',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -114,7 +115,7 @@ return array(
 		'cluster' => false,
 
 		'default' => array(
-			'host'     => '172.16.40.21',
+			'host'     => '192.168.29.128',
 			'port'     => 6379,
 			'database' => 0,
 		),
